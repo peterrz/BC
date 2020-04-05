@@ -1,16 +1,31 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+ 
 import Button from 'react-native-button';
 import {Actions} from 'react-native-router-flux';
-
+ 
+import { ScrollView, Switch, StyleSheet, Text, View } from 'react-native';
+import { Avatar, ListItem } from 'react-native-elements';
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  scroll: {
+    backgroundColor: 'white',
   },
-});
+  userRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingBottom: 8,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 6,
+  },
+  userImage: {
+    marginRight: 12,
+  },
+  listItemContainer: {
+    height: 55,
+    borderWidth: 0.5,
+    borderColor: '#ECECEC',
+  },
+})
 
 const popToRoot = () => {
   Actions.popTo('launch');
@@ -36,16 +51,34 @@ export default class extends React.Component {
     const title = this.props.title || 'No Title';
     const data = this.props.data || 'No Data';
     return (
-      <View style={styles.container}>
-        <Text>Login page 3</Text>
-        <Text>Title: {title}</Text>
-        <Text>Data: {data}</Text>
-        <Button onPress={Actions.pop}>Back</Button>
-        <Button onPress={popToLogin1}>To Login</Button>
-        <Button onPress={popToLogin2}>To Login2</Button>
-        <Button onPress={popAndRefresh}>Back and refresh</Button>
-        <Button onPress={popToRoot}>To Root</Button>
+      <ScrollView style={styles.scroll}>
+      <View style={styles.userRow}>
+        <View style={styles.userImage}>
+          <Avatar
+            rounded
+            size="large"
+            source={{
+              uri: './images/avatar.jpg',
+            }}
+          />
+        </View>
+        <View>
+          <Text style={{ fontSize: 16 }}>Ali</Text>
+          <Text
+            style={{
+              color: 'gray',
+              fontSize: 16,
+            }}
+          >
+            Email
+          </Text>
+        </View>
       </View>
+    
+     
+        
+      
+    </ScrollView>
     );
   }
 }

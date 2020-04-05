@@ -1,26 +1,59 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import Button from 'react-native-button';
-import {Actions} from 'react-native-router-flux';
+ 
+import { ScrollView, Switch, StyleSheet, Text, View } from 'react-native';
+import { Avatar, ListItem } from 'react-native-elements';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
+  scroll: {
+    backgroundColor: 'white',
+  },
+  userRow: {
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flexDirection: 'row',
+    paddingBottom: 8,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 6,
+  },
+  userImage: {
+    marginRight: 12,
+  },
+  listItemContainer: {
+    height: 55,
+    borderWidth: 0.5,
+    borderColor: '#ECECEC',
   },
 });
 
 const Register = () => (
-  <View style={styles.container}>
-    <Text>Register page</Text>
-    <Button onPress={() => Actions.register2()}>Register</Button>
-    <Button onPress={() => Actions.home({homeProp: 'Test of prop refresh!'})}>
-      Replace screen
-    </Button>
-    <Button onPress={Actions.pop}>Back</Button>
+  <ScrollView style={styles.scroll}>
+  <View style={styles.userRow}>
+    <View style={styles.userImage}>
+      <Avatar
+        rounded
+        size="large"
+        source={{
+          uri: './images/avatar.jpg',
+        }}
+      />
+    </View>
+    <View>
+      <Text style={{ fontSize: 16 }}>Ali</Text>
+      <Text
+        style={{
+          color: 'gray',
+          fontSize: 16,
+        }}
+      >
+        Email
+      </Text>
+    </View>
   </View>
+
+ 
+    
+  
+</ScrollView>
 );
 
 export default Register;

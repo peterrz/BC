@@ -24,6 +24,7 @@ class Launch extends React.Component {
           }
         />
         <Button title="Go to Register page" onPress={Actions.register} />
+        <Button title="Go main page" onPress={Actions.main} />
         <Button title="Display Error Modal" onPress={Actions.error} />
         <Button
           title="Display Lightbox"

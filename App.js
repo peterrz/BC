@@ -24,13 +24,14 @@ import TabView from './components/TabView';
 import TabIcon from './components/TabIcon';
 import EchoView from './components/EchoView';
 import MessageBar from './components/MessageBar';
+import mainpage from './components/main';
 import ErrorModal from './components/modal/ErrorModal';
 import DemoLightbox from './components/lightbox/DemoLightbox';
 import MenuIcon from './images/menu_burger.png';
 import CustomNavBarView from './components/CustomNavBarView';
 import CustomNavBar from './components/CustomNavBar';
 import CustomNavBar2 from './components/CustomNavBar2';
-
+ 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -79,9 +80,9 @@ const App = () => (
               getTitle={({navigation}) => navigation.state.key}
             />
             <Scene
-              key="launch"
-              component={Launch}
-              title="Launch"
+              key="mainpage"
+              component={mainpage}
+              title="main"
               initial
               type={ActionConst.RESET}
             />
@@ -125,6 +126,7 @@ const App = () => (
               navTransparent>
               <Scene key="_register" component={Register} title="Register" />
               <Scene key="register2" component={Register} title="Register2" />
+              <Scene key="mainpage" component={mainpage} title="main" />
               <Scene
                 key="home"
                 component={Home}
