@@ -70,7 +70,7 @@ export default class extends React.Component {
               fontSize: 16,
             }}
           >
-            Email
+            Email2
           </Text>
         </View>
       </View>

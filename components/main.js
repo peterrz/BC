@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     paddingTop: 6,
     marginTop: 15,
-  },
+  },    
+  //new
   userImage: {
     marginRight: 12,
   },
